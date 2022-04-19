@@ -12,6 +12,11 @@ public class PageBean implements Serializable{
 
 	private String page;
 
+	public enum Pages{
+			page_a, page_b;
+	}
+	
+	
 	public String getPage() {
 		return page;
 	}
@@ -20,12 +25,12 @@ public class PageBean implements Serializable{
 		this.page = page;
 	}
 
-	public String goTo() {
+	public Pages goTo() {
 		
 		if("a".equals(page)) {
-		return "page_a";
+		return Pages.page_a;
 	}else if("b".equals(page)){
-		return "page-b";
+		return Pages.page_b;
 	}else {
 		return null;
 
