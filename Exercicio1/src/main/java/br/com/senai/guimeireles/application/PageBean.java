@@ -21,11 +21,10 @@ public class PageBean implements Serializable{
 	
 	public String somar() {
 		
-		res = num1 + num2 + num3;
 		
-		flash.put("resultadoDaSoma", res);
+		flash.put("result", (num1 + num2 + num3));
 		
-		return "res?faces-redirect=true";
+		return "result";
 	}
 	
 	public int getNum1() {
