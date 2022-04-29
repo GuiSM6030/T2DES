@@ -16,7 +16,7 @@
 <body>
 	
 	<h:form>
-		<h:painelGrid columns="2">
+		<h:panelGrid columns="2">
 			<f:facet name="header">
 				Cadastro de Usuário
 			
@@ -34,7 +34,7 @@
 			<h:inputText value="#{cadastro.senha2}"/>
 		
 			Sexo:
-			<h:selectOneRadio>
+			<h:selectOneRadio value="#{cadastro.sexo}">
 			
 				<f:selectItem itemValue="F" itemLabel="Feminino"/>
 				<f:selectItem itemValue="M" itemLabel="Masculino"/>
@@ -42,21 +42,21 @@
 			</h:selectOneRadio>
 			
 			Deseja receber emails?
-			<h:selectBooleanCheckbox value="#{cadastro.receberEmails"/>
+			<h:selectBooleanCheckbox value="#{cadastro.receberEmails}"/>
 		
 			Observações
-			<h:inputTextarea value="#cadastro.observações" rows="4" cols="60"/>
+			<h:inputTextarea  rows="4" cols="60"/>
 			
 			Linguagem de programação:
 			
 			<h:selectManyCheckbox value="#{cadastro.linguagens}">
 			
-			<f:selectItems value= "#{cadastro.listaLinguagens}" var="L" itemValue="#L-id" itemLabel="#{L.nome}"/>
+			<f:selectItems value= "#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}"/>
 	
 			
 			</h:selectManyCheckbox>
 	
-		</h:painelGrid>
+		</h:panelGrid>
 		
 		<h:commandButton value = "Cadastrar" action="info"></h:commandButton>
 		
