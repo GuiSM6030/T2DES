@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+
+<h:head>
+	<meta http-equi="Content-Type" content="text/html; charset-ISO-8859-1"/>
+	<title>Gerador de Números Aleatórios</title>
+
+</h:head>
+
+<body>
+	
+	
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				Gerador de Números Aleatórios
+			
+			</f:facet>
+			Quantidade de números:
+			<h:selectOneMenu value="#{genBean.quantidade}">
+				<f:selectItem itemLabel="Selecione" noSelectionOption="true" />
+				<f:selectItem itemValue="1" itemLabel="1" />
+				<f:selectItem itemValue="2" itemLabel="2" />
+				<f:selectItem itemValue="3" itemLabel="3" />
+				<f:selectItem itemValue="4" itemLabel="4" />
+				<f:selectItem itemValue="5" itemLabel="5" />
+			</h:selectOneMenu>
+		
+			Valor Mínimo:
+			<h:inputText value="#{genBean.max}"/>
+		
+			Valor Máximo:
+			<h:inputText value="#{genBean.min}"/>
+			
+			<h:commandButton value = "Gerar" action="info"></h:commandButton>
+	
+		</h:panelGrid>
+		
+		<h:outputText value="Resultado:"></h:outputText>
+		<h:outputText value="#{genBean.res}"/>
+		
+		
+	
+	</h:form>
+
+</body>
+</html>
