@@ -1,27 +1,39 @@
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
-@SuppressWarnings("serial")
 @Named
 @RequestScoped
-public class GenBean implements Serializable{
+public class GenBean implements Serializable {
 	
-	private Integer max;
+	private static Random random = new Random();
+
+	private Integer qtde;
 	private Integer min;
-	private Integer[] quantidades;
+	private Integer max;
 	
-	public Quant[] getQuantidades() {
-		return Quant.QUANTIDADES;
+	private List<Integer> numeros = new ArrayList<>();
+
+	public String gerar() {
+		
+		for (int i = 0; i < qtde; i++) {
+			int n = random.nextInt(max - min) + min + 1;
+			numeros.add(n);
+		}
+		
+		return null;
 	}
 
-	public Integer getMax() {
-		return max;
+	public Integer getQtde() {
+		return qtde;
 	}
 
-	public void setMax(Integer max) {
-		this.max = max;
+	public void setQtde(Integer qtde) {
+		this.qtde = qtde;
 	}
 
 	public Integer getMin() {
@@ -32,10 +44,19 @@ public class GenBean implements Serializable{
 		this.min = min;
 	}
 
-	public void setQuantidades(Integer[] quantidades) {
-		this.quantidades = quantidades;
+	public Integer getMax() {
+		return max;
 	}
 
+	public void setMax(Integer max) {
+		this.max = max;
+	}
 
+	public List<Integer> getNumeros() {
+		return numeros;
+	}
 
+	public void setNumeros(List<Integer> numeros) {
+		this.numeros = numeros;
+	}
 }
