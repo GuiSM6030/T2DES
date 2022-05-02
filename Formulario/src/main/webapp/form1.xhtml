@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cadastro de Usuário</title>
+</h:head>
+
+<body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">Dados Pessoais</f:facet>
+		
+		
+		Nome:
+			<h:inputText required="" value="#{formBean.pessoa.nome}"/>
+		E-Mail:
+			<h:inputText required="" value="#{formBean.pessoa.email}"/>
+		Data de Nascimento:
+			<h:inputText required="" value="#{formBean.pessoa.dtNasc}"/>
+		Rua:
+			<h:inputText required="" value="#{formBean.pessoa.endereco.rua}"/>
+		Número:
+			<h:inputText required="" value="#{formBean.pessoa.num}"/>
+		Complemento:
+			<h:inputText value="#{formBean.pessoa.comp}"/>
+		Bairro:
+			<h:inputText required="" value="#{formBean.pessoa.bairro}"/>
+		CEP:
+			<h:inputText required="" value="#{formBean.pessoa.cep}"/>
+		Cidade:
+			<h:inputText required="" value="#{formBean.pessoa.cidade}"/>
+			
+		Quantidade de números:
+			<h:selectOneMenu value="#{formBean.pessoa.endereco.estado}">
+				<f:selectItem itemValue="1" itemLabel="Acre - AC" />
+				<f:selectItem itemValue="2" itemLabel="Alagoas - AL" />
+				<f:selectItem itemValue="3" itemLabel="Amapá - AP" />
+				<f:selectItem itemValue="4" itemLabel="Amazonas - AM" />
+				<f:selectItem itemValue="5" itemLabel="Bahia - BA" />
+			</h:selectOneMenu>
+		
+			Valor mínimo:
+			<h:inputText value="#{genBean.min}" size="4" />
+			
+			Valor máximo:
+			<h:inputText value="#{genBean.max}" size="4" />
+		</h:panelGrid>
+
+		<h:commandButton value="Gerar" action="#{genBean.gerar}" />
+		<hr />
+
+		<h:selectManyListbox rendered="#{genBean.numeros.size() > 0}" style="width: 140px;" readonly="true">
+			<f:selectItems value="#{genBean.numeros}" var="n" itemLabel="#{n}" />
+		</h:selectManyListbox>
+	</h:form>
+</body>
+</html>
