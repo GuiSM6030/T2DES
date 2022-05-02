@@ -11,6 +11,7 @@
 </h:head>
 
 <body>
+<center>
 	<h:form>
 		<h:panelGrid columns="2">
 			<f:facet name="header">Dados Pessoais</f:facet>
@@ -23,32 +24,36 @@
 		Data de Nascimento:
 			<h:inputText required="" value="#{formBean.pessoa.dtNasc}"/>
 		Rua:
-			<h:inputText required="" value="#{formBean.pessoa.endereco.rua}"/>
+			<h:inputText required="" value="#{formBean.pessoa.endRes.rua}"/>
 		Número:
-			<h:inputText required="" value="#{formBean.pessoa.num}"/>
+			<h:inputText required="" value="#{formBean.pessoa.endRes.num}"/>
 		Complemento:
-			<h:inputText value="#{formBean.pessoa.comp}"/>
+			<h:inputText value="#{formBean.pessoa.endRes.comp}"/>
 		Bairro:
-			<h:inputText required="" value="#{formBean.pessoa.bairro}"/>
+			<h:inputText required="" value="#{formBean.pessoa.endRes.bairro}"/>
 		CEP:
-			<h:inputText required="" value="#{formBean.pessoa.cep}"/>
+			<h:inputText required="" value="#{formBean.pessoa.endRes.cep}"/>
 		Cidade:
-			<h:inputText required="" value="#{formBean.pessoa.cidade}"/>
+			<h:inputText required="" value="#{formBean.pessoa.endRes.cidade}"/>
 			
-		Quantidade de números:
-			<h:selectOneMenu value="#{formBean.pessoa.endereco.estado}">
-				<f:selectItem itemValue="1" itemLabel="Acre - AC" />
-				<f:selectItem itemValue="2" itemLabel="Alagoas - AL" />
-				<f:selectItem itemValue="3" itemLabel="Amapá - AP" />
-				<f:selectItem itemValue="4" itemLabel="Amazonas - AM" />
-				<f:selectItem itemValue="5" itemLabel="Bahia - BA" />
+		Estado:
+			<h:selectOneMenu value="#{formBean.pessoa.endRes.estado}">
+				<f:selectItem itemValue="Selecione" noSelectionOption="true" />
+				<f:selectItems value="#{formBean.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
 			</h:selectOneMenu>
 		
-			Valor mínimo:
-			<h:inputText value="#{genBean.min}" size="4" />
+		Telefone Residencial:
+		
+		<h:panelGroup>
+			<h:inputText value="#{formBean.pessoa.telRes.ddd}" size="2" /> <h:inputText value="#{formBean.pessoa.telRes.numero}" size="9" />
+		</h:panelGroup>
 			
-			Valor máximo:
-			<h:inputText value="#{genBean.max}" size="4" />
+			
+		Telefone Celular:
+		<h:panelGroup>
+			<h:inputText value="#{formBean.pessoa.telCel.ddd}" size="2" /> <h:inputText value="#{formBean.pessoa.telCel.numero}" size="9" />
+		</h:panelGroup>
+			
 		</h:panelGrid>
 
 		<h:commandButton value="Gerar" action="#{genBean.gerar}" />
@@ -58,5 +63,6 @@
 			<f:selectItems value="#{genBean.numeros}" var="n" itemLabel="#{n}" />
 		</h:selectManyListbox>
 	</h:form>
+	</center>
 </body>
 </html>
