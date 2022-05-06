@@ -16,5 +16,8 @@ public class Constantes {
 		
 		INTERESSES = new ArrayList<>();
 		INTERESSES.add(new Interesse(1, "Esportes"));
+		INTERESSES.add(new Interesse(2, "Tênis de Mesa"));
+		INTERESSES.add(new Interesse(3, "Cassino"));
+		INTERESSES.add(new Interesse(4, "Rinha de anão"));
 }
 }

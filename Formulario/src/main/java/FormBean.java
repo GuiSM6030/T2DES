@@ -10,7 +10,7 @@ import javax.inject.Named;
 public class FormBean implements Serializable {
 
 	private Pessoa pessoa;
-
+	
 	public Pessoa getPessoa() {
 		if (pessoa == null) {
 			pessoa = new Pessoa();
