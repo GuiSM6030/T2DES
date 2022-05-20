@@ -9,53 +9,56 @@
 	
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
-	<title> Formulário de Cadastro </title>
+	<title>Despesas</title>
 </h:head>
 <body>
-<h:outputStylesheet library = "css" name = "styles.css" /> 
-	<h:form>
+<h:outputStylesheet library = "css" name ="styles.css"/> 
+<table width="100%" border="1">
+		<tr>
+			<td align="center"> <h3>CADASTRO</h3></td>
+		</tr>
+</table>
+	<h:form styleClass="form">
 	
-	<h:panelGroup value="" >
+	<h:panelGroup>
 	<h:panelGrid>
 	
 	<h:column>
-	<h:outputText value="Nome"></h:outputText>
+	<h:outputText value="Data:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.data1}" id="data" ></h:inputText>
+	<h:inputText value="#{tabela.date}" id="data" required="Campo obrigatório"></h:inputText>
 	</h:column>
 	
 	<h:column>
-	<h:outputText value="Email"></h:outputText>
+	<h:outputText value="Descrição:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.desc1}" id="descricao" ></h:inputText>
+	<h:inputText value="#{tabela.desc}" id="descricao" required="Campo obrigatório"></h:inputText>
 	</h:column>
 	
 	<h:column>
-	<h:outputText value="CPF"></h:outputText>
+	<h:outputText value="Valor:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.valor1}" id="valor" ></h:inputText>
+	<h:inputText value="#{tabela.valor}" id="valor" required="Campo obrigatório"></h:inputText>
 	</h:column>
 	
-	<h:commandButton value="Inserir" action="#{tabela.inserir(tabela.data1,tabela.desc1,tabela.valor1)}"></h:commandButton>
+	<h:commandButton value="Inserir" action="#{tabela.inserir(tabela.date,tabela.desc,tabela.valor)}"></h:commandButton>
 	</h:panelGrid>
 	</h:panelGroup>
 	
-	<h:panelGroup rendered="#{tabela.a == true }">
+	<h:panelGroup rendered="#{tabela.back == true }">
 		<table>
 			
 			<tr>
-				<th class="cabecalho" colspan="5">Cadastros</th>
+			<th class="cabecalho" colspan="5" >
+			Lista de Despesas
+			</th>
 			</tr>
-			
-			
 			<tr>
-			
-			<th class="cabecalho">id</th>
-			<th class="cabecalho">Nome</th>
-			<th class="cabecalho">E-mail</th>
-			<th class="cabecalho">Data de Nascimento</th>
-			<th class="cabecalho">Operação</th>
-						
+			<th class="cabecalho">Cabecalho</th>
+			<th class="cabecalho">Data</th>
+			<th class="cabecalho">Descrição</th>
+			<th class="cabecalho">Valor</th>
+			<th class="cabecalho">Operação</th>			
 			</tr>
 			<ui:repeat value="#{tabela.despesas}" var="d" varStatus="st">
 			
@@ -83,7 +86,7 @@
 				<h:commandLink value="Alterar" action="#{tabela.editar(d)}"></h:commandLink>
 				<h:commandLink value="Excluir" action="#{tabela.excluir(d)}"></h:commandLink>
 				</h:panelGroup>
-				<h:commandLink value="Gravar" action="#{tabela.gravar(d)}" rendered= "#{d.edit }"></h:commandLink>
+				<h:commandLink value="Gravar" action="#{tabela.gravar(d)}" rendered= "#{d.edit}"></h:commandLink>
 				</td>
 		
 		
@@ -95,12 +98,24 @@
 		<br/>
 		
 		
-		<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
-		<h:outputText value="Não cadastrado" styleClass="Mensage"></h:outputText>
+		<h:panelGroup rendered="#{tabela.despesas.size()==0}">
+		<h:outputText value="Nenhum usuário cadastrado" styleClass="Message"></h:outputText>
 		</h:panelGroup>
 	</h:form>
 	
-
+	<table width="100%" border="1">
+		<tr>
+			<td align="center">Todos os direitos reservados</td>
+			
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+	var data = document.getElementById("Data");
+	var descricao = document.getElementById("Descrição");
+	var valor = document.getElementById("Valor");
+	if()	
+	</script>
 
 </body>
 </html>
