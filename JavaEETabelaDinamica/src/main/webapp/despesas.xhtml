@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Despesas</title>
+</h:head>
+
+<body>
+
+<h:outputStylesheet library="css" name="styles.css"/>
+
+	<h:form>
+
+		<h:dataTable value="#{tabela.despesas}" var="d" styleClass="tabela" headerClass="cabecalho" columnClasses="colNumero, colData, colDesc, colValor, colOp" rendered="#{tabela.despesas.rowCount > 0}">
+
+			<f:facet name="header">Lista de Despesas</f:facet>
+
+			<h:column>
+
+				<f:facet name="header">id </f:facet>
+				#{tabela.despesas.rowIndex +1}
+				
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Data </f:facet>
+				<h:outputText value="#{d.data}" rendered="#{!d.edit}">
+
+				</h:outputText>
+				<h:inputText value="#{d.data}" rendered="#{d.edit}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Descrição</f:facet>
+				<h:outputText value="#{d.desc}" rendered="#{!d.edit}" />
+				<h:inputText value="#{d.desc}" rendered="#{d.edit}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Valor</f:facet>
+				<h:outputText value="#{d.valor}" rendered="#{!d.edit}">
+					<f:convertNumber type="currency" locale="pt_BR" />
+				</h:outputText>
+
+				<h:inputText value="#{d.valor}" rendered="#{d.edit}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">Opeações</f:facet>
+				<h:panelGroup rendered="#{!d.edit}">
+					<h:commandLink value="Alterar" action="#{tabela.edit(d)}" />
+					<h:commandLink value="Excluir" action="#{tabela.delete(d)}" />
+				</h:panelGroup>
+				<h:commandLink value="Gravar" action="#{tabela.gravar(d)}" rendered="#{d.edit}"></h:commandLink>
+			</h:column>
+
+			<br/>
+			
+		</h:dataTable>
+
+			<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton>
+
+	</h:form>
+
+</body>
+</html>

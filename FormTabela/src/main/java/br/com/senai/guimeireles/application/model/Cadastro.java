@@ -1,5 +1,6 @@
 package br.com.senai.guimeireles.application.model;
 
+// Declaração de variavel
 public class Cadastro {
 private String data;
 private String descricao;
@@ -24,7 +25,7 @@ public Cadastro() {
 	this.valor = valor;
 }
 
-
+// Chama os Getters e Setters
 public void setData(String data) {
 	this.data = data;
 }

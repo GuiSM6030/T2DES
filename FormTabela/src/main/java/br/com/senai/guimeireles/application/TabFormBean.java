@@ -13,8 +13,11 @@ import br.com.senai.guimeireles.application.model.Cadastro;
 @SuppressWarnings("serial") 
 @Named("tabela")
 @SessionScoped 
+
+//Vai fazer a manipulação dos objetos
 public class TabFormBean implements Serializable{
 	
+	//lista de onde vai ser colocadas os cadastros
 	private List<Cadastro> despesas = new ArrayList<>();
 	
 	String date;
@@ -22,7 +25,7 @@ public class TabFormBean implements Serializable{
 	Double valor;
 	Boolean back = false; 
 	
-	
+	//Getters e Setters
 	public String getDate() {
 		return date;
 	}
@@ -49,6 +52,7 @@ public class TabFormBean implements Serializable{
 	
 	public String inserir(String data,String desc,Double valor) {
 		
+		//Construtor
 		Cadastro d = new Cadastro(data,desc,valor); 
 		d.setEdit(true);
 		back =true;
@@ -60,6 +64,7 @@ public class TabFormBean implements Serializable{
 		
 	}
 	
+	//Exclui da tabela o cadastro feito
 	public String excluir(Cadastro despesa) {
 		
 		despesas.remove(despesa);
@@ -67,12 +72,14 @@ public class TabFormBean implements Serializable{
 		return null;
 	}
 	
+	//Edita os dados
 	public String editar(Cadastro despesa) {
 		despesa.setEdit(true); 
 		
 		return null;
 	}
 	
+	//Salva os dados assim que eles saem do formulário, ou quando termina de editar
 	public String gravar (Cadastro despesa) {
 		despesa.setEdit(false);
 		
@@ -83,6 +90,7 @@ public class TabFormBean implements Serializable{
 		return despesas;
 	}
 
+	//Parte que decide onde vai abrir para edição ou vai deixar só mostrando
 	public Boolean getBack() {
 		return back;
 	}
