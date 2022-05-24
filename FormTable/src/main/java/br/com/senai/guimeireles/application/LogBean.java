@@ -43,7 +43,7 @@ public class LogBean implements Serializable {
 
 	public String doLogin() {
 		if("abc".equals(nome) && "123".equals(senha)) {
-			return "sucesso";
+			return "form";
 		}
 		return null;
 	}
