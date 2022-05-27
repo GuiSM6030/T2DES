@@ -23,12 +23,12 @@
 				
 			}else{
 				if(descricao ==""){
-					alert("Descrição não Preenchida!");
+					alert("Jogo não Preenchido!");
 					return false;
 				}else{
 					
 					if(valor ==""){
-					alert("Valor não preenchido!");
+					alert("Valor não Preenchido!");
 					return false;}
 					
 					
@@ -38,13 +38,21 @@
 		}	
 	</script>
 	<body>
-
+	
 <h:outputStylesheet library = "css" name ="styles.css"/> 
+
+
+<!-- Cabeçalho -->
+
 
 <table width="100%" border="1">
 		<tr>
 			<td align="center"> <h:graphicImage value="https://www.mktesportivo.com/wp-content/uploads/2021/08/casinos.jpg" ></h:graphicImage> </td>
 		</tr>
+
+
+<!-- Formulário -->
+
 
 </table>
 
@@ -56,25 +64,29 @@
 	<h:column>
 	<h:outputText value="Data do Jogo:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.date}" id="data" required="Campo obrigatório"></h:inputText>
+	<h:inputText value="#{tabela.cadastro.data}" id="data" required="Campo obrigatório"></h:inputText>
 	</h:column>
 	
 	<h:column>
 	<h:outputText value="Jogo:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.desc}" id="descricao" required="Campo obrigatório"></h:inputText>
+	<h:inputText value="#{tabela.cadastro.descricao}" id="descricao" required="Campo obrigatório"></h:inputText>
 	</h:column>
 	
 	<h:column>
 	<h:outputText value="Valor Apostado:"></h:outputText>
 	<br/>
-	<h:inputText value="#{tabela.valor}" id="valor" required="Campo obrigatório"></h:inputText>
+	<h:inputText value="#{tabela.cadastro.valor}" id="valor" required="Campo obrigatório"></h:inputText>
 	</h:column>
 
 	<h:commandButton value="Inserir" action="#{tabela.inserir(tabela.date,tabela.desc,tabela.valor)}" onclick="return verificarCampos()"></h:commandButton>
 
 	</h:panelGrid>
 	</h:panelGroup>
+	
+	<!-- tabela -->
+	
+	
 	
 	<h:panelGroup rendered="#{tabela.back == true }">
 		<table>

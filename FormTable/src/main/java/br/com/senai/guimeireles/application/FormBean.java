@@ -17,12 +17,26 @@ public class FormBean implements Serializable{
 	
 	private List<Cadastro> despesas = new ArrayList<>();
 	
-	String date;
-	String desc;
-	Double valor;
 	Boolean back = false; 
 	
+	private Cadastro cadastro;
 	
+	
+	public Cadastro getCadastro() {
+		if(cadastro==null) {
+			cadastro = new Cadastro();
+		}
+		return cadastro;
+	}
+
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
+
+	public void setDespesas(List<Cadastro> despesas) {
+		this.despesas = despesas;
+	}
+
 	public String getDate() {
 		return date;
 	}
