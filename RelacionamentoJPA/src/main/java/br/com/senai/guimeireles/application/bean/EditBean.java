@@ -8,6 +8,12 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
+import br.com.senai.guimeireles.application.ejb.ClienteBean;
+import br.com.senai.guimeireles.application.ejb.PedidoBean;
+import br.com.senai.guimeireles.application.ejb.ProdutoBean;
+import br.com.senai.guimeireles.application.model.Cliente;
+import br.com.senai.guimeireles.application.model.Produto;
+
 
 
 
