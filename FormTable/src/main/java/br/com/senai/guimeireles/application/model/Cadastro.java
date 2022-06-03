@@ -6,14 +6,14 @@ private String desc;
 private Double valor;
 private Boolean edit;
 
-public String getData() {
+public String getDate() {
 	return date;
 }
 
 
-public Cadastro(String data, String descricao, Double valor) {
+public Cadastro(String date, String descricao, Double valor) {
 	super();
-	this.date = data;
+	this.date = date;
 	this.desc = descricao;
 	this.valor = valor;
 }
@@ -25,7 +25,7 @@ public Cadastro() {
 }
 
 
-public void setData(String data) {
+public void setDate(String data) {
 	this.date = data;
 }
 public String getDescricao() {
