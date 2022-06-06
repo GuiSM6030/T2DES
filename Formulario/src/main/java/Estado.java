@@ -1,6 +1,7 @@
 
 public class Estado {
 
+	//declaração de variável
 	private String nome;
 	private String sigla;
 
@@ -9,14 +10,14 @@ public class Estado {
 	public Estado() {
 	}
 
-
+	//construtor
 	public Estado(String nome, String sigla) {
 		super();
 		this.nome = nome;
 		this.sigla = sigla;
 	}
 
-
+	//getter e setter
 	public String getNome() {
 		return nome;
 	}

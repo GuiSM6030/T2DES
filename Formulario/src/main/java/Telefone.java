@@ -3,6 +3,7 @@ public class Telefone {
 	
 	private static Telefone telefone = new Telefone();
 
+	//declaração de variavel
 	private String ddd;
 	private String numero;
 	private Tipo tipo;
@@ -11,6 +12,7 @@ public class Telefone {
 		FIXO, CELULAR;
 }
 
+	//getter e setter
 	public static Telefone getTelefone() {
 		return telefone;
 	}

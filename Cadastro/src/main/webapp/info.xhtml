@@ -4,48 +4,49 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	lang="pt-br">
+	xmlns:jsf="http://xmlns.jcp.org/jsf" lang="pt-br">
 <h:head>
-<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"></meta>
-<title>Info</title>
+	<meta http-equi="Content-Type" content="text/html; charset=ISO-8859-1"></meta>
+	<title>Info</title>
 </h:head>
- 
+
 <body>
 
 
-<h:panelGrid columns="2">
-<f:facet name="header"> Cadastro do Usuário</f:facet>
-<h:outputText value="Nome:"></h:outputText>
-<h:outputText value="#{cadastro.nome}"></h:outputText>
+	<h:panelGrid columns="2">
+		<f:facet name="header"> Cadastro do Usuário</f:facet>
+		<!-- usado para mostrar o que foi digitado -->
+		<h:outputText value="Nome:"></h:outputText>
+		<h:outputText value="#{cadastro.nome}"></h:outputText>
 
-<h:outputText value="E-mail:"></h:outputText>
-<h:outputText value="#{cadastro.email}"></h:outputText>
+		<h:outputText value="E-mail:"></h:outputText>
+		<h:outputText value="#{cadastro.email}"></h:outputText>
 
-<h:outputText value="Senha:"></h:outputText>
-<h:outputText value="#{cadastro.senha1}"></h:outputText>
+		<h:outputText value="Senha:"></h:outputText>
+		<h:outputText value="#{cadastro.senha1}"></h:outputText>
 
-<h:outputText value="Confirmação da senha:"></h:outputText>
-<h:outputText value="#{cadastro.senha2}"></h:outputText>
+		<h:outputText value="Confirmação da senha:"></h:outputText>
+		<h:outputText value="#{cadastro.senha2}"></h:outputText>
 
-<h:outputText value="Sexo:"></h:outputText>
-<h:outputText value="Masculino" rendered="#{cadastro.sexo == 'M'}"></h:outputText>
-<h:outputText value="Feminino" rendered="#{cadastro.sexo == 'F'}"></h:outputText>
+		<h:outputText value="Sexo:"></h:outputText>
+		<!-- rendered atribui a partir de condicional -->
+		<h:outputText value="Masculino" rendered="#{cadastro.sexo == 'M'}"></h:outputText>
+		<h:outputText value="Feminino" rendered="#{cadastro.sexo == 'F'}"></h:outputText>
 
-<h:outputText value="Deseja receber E-mails?"></h:outputText>
-<h:outputText value="Sim" rendered="#{cadastro.receberEmails}"></h:outputText>
-<h:outputText value="Não" rendered="#{!cadastro.receberEmails}"></h:outputText>
-
-
-<h:outputText value="Observações:"></h:outputText>
-<h:outputText value="#{cadastro.observacoes}"></h:outputText>
+		<h:outputText value="Deseja receber E-mails?"></h:outputText>
+		<h:outputText value="Sim" rendered="#{cadastro.receberEmails}"></h:outputText>
+		<h:outputText value="Não" rendered="#{!cadastro.receberEmails}"></h:outputText>
 
 
-<h:outputText value="Linguagens de Programação:"></h:outputText>
-<h:outputText value="#{cadastro.linguagensAsString}"></h:outputText>
+		<h:outputText value="Observações:"></h:outputText>
+		<h:outputText value="#{cadastro.observacoes}"></h:outputText>
 
 
-</h:panelGrid>
+		<h:outputText value="Linguagens de Programação:"></h:outputText>
+		<h:outputText value="#{cadastro.linguagensAsString}"></h:outputText>
+
+
+	</h:panelGrid>
 </body>
-	
+
 </html>

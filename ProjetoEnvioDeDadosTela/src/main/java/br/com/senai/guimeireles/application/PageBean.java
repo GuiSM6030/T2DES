@@ -12,21 +12,22 @@ import javax.inject.Named;
 public class PageBean implements Serializable{
 
 	private String nome;
-	
+
 	public enum Pages{
 		form, result;
-}
+	}
 
-	@Inject
+	@Inject //injeta o flash
 	private Flash flash;
-	
+
 	public String processar() {
-		
+		//apresenta o nome que o usuario inseriu no xhtml
 		flash.put("nomeDoUsuario", nome);
-		
+
 		return "result?faces-redirect=true";
 	}
-	
+
+	//getter e setter
 	public String getNome() {
 		return nome;
 	}
@@ -34,5 +35,5 @@ public class PageBean implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 }

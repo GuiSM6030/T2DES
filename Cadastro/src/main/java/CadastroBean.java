@@ -4,12 +4,19 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.context.Flash;
 import javax.inject.Inject;
 import javax.inject.Named;
- 
+
+//tira o aviso de erro 
 @SuppressWarnings("serial")
+
+//como o bean vai ser chamado no xhtml
 @Named("cadastro")
+
+//deixa salvo enquanto a página estiver aberta
 @RequestScoped
+
 public class CadastroBean implements Serializable{
 
+	//declaração de variável
 	private String nome;
 	private String email;
 	private String senha1;
@@ -18,11 +25,13 @@ public class CadastroBean implements Serializable{
 	private Boolean receberEmails;
 	private String observacoes;
 	private Integer[] linguagens;
-	
+
+
+	//getter e setter
 	public Linguagem[] getListaLinguagens() {
 		return Linguagem.LINGUAGENS;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -71,9 +80,10 @@ public class CadastroBean implements Serializable{
 	public void setLinguagens(Integer[] linguagens) {
 		this.linguagens = linguagens;
 	}
-	
+
 	public String getLinguagensAsString() {
-		
+
+		//Transforma em string
 		String str="";
 		boolean first = true;
 		for(Integer linguagem : linguagens) {
@@ -83,11 +93,11 @@ public class CadastroBean implements Serializable{
 			str += Linguagem.LINGUAGENS[linguagem].getNome();
 			first = false;
 		}
-		
+
 		return str;
 	}
 
-	
-		
+
+
 
 }

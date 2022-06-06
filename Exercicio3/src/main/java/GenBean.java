@@ -1,4 +1,3 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,25 +8,30 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class GenBean implements Serializable {
-	
+
+	//instancia método random
 	private static Random random = new Random();
 
+	//declaração de variavel
 	private Integer qtde;
 	private Integer min;
 	private Integer max;
-	
+
+	//Arraylist
 	private List<Integer> numeros = new ArrayList<>();
 
 	public String gerar() {
-		
+
+		//Gera os numeros aleatoriamente
 		for (int i = 0; i < qtde; i++) {
 			int n = random.nextInt(max - min) + min + 1;
 			numeros.add(n);
 		}
-		
+
 		return null;
 	}
 
+	//getter e setter
 	public Integer getQtde() {
 		return qtde;
 	}

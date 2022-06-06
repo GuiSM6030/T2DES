@@ -16,7 +16,8 @@
 			<f:facet name="header">
 				Dados Pessoais
 			</f:facet>
-		
+
+			<!-- apresenta os dados na tela -->
 			Nome:
 			<h:outputText value="#{formBean.pessoa.nome}" />
 			
@@ -50,10 +51,12 @@
 			<h:outputText value="#{formBean.pessoa.endRes.estado.sigla}" />
 			
 			Telefone residencial:
-			<h:outputText value="(#{formBean.pessoa.telRes.ddd}) (#{formBean.pessoa.telRes.numero})"  />
+			<h:outputText
+				value="(#{formBean.pessoa.telRes.ddd}) (#{formBean.pessoa.telRes.numero})" />
 			
 			Telefone celular:
-			<h:outputText value="(#{formBean.pessoa.telCel.ddd}) #{formBean.pessoa.telCel.numero}"  />
+			<h:outputText
+				value="(#{formBean.pessoa.telCel.ddd}) #{formBean.pessoa.telCel.numero}" />
 		</h:panelGrid>
 		<h:panelGrid columns="2">
 			<f:facet name="header">
@@ -93,15 +96,18 @@
 			<h:outputText value="#{formBean.pessoa.endCom.estado}" />
 			
 			Telefone comercial:
-			<h:outputText value="(#{formBean.pessoa.telCom.ddd}) #{formBean.pessoa.telCom.numero}"  />
+			<h:outputText
+				value="(#{formBean.pessoa.telCom.ddd}) #{formBean.pessoa.telCom.numero}" />
 		</h:panelGrid>
 		<h:panelGrid columns="1">
 			<f:facet name="header">
 				Áreas de Interesse
 			</f:facet>
-		
-			<h:selectManyCheckbox value="#{formBean.pessoa.interesses}" layout="pageDirection" readonly="true">
-				<f:selectItems value="#{formBean.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"  />
+
+			<h:selectManyCheckbox value="#{formBean.pessoa.interesses}"
+				layout="pageDirection" readonly="true">
+				<f:selectItems value="#{formBean.interesses}" var="i"
+					itemValue="#{i.id}" itemLabel="#{i.area}" />
 			</h:selectManyCheckbox>
 		</h:panelGrid>
 	</h:panelGrid>

@@ -3,6 +3,7 @@ public class Endereco {
 
 	private static Endereco endereco = new Endereco();
 	
+	//declaração de variavel
 	private String rua;
 	private Integer num;
 	private String comp;
@@ -11,6 +12,8 @@ public class Endereco {
 	private String cidade;
 	private Estado estado;
 	
+	
+	//getter e setter
 	public static Endereco getEndereco() {
 		return endereco;
 	}

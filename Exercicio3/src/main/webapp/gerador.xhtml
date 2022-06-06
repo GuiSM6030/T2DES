@@ -16,6 +16,7 @@
 			<f:facet name="header">Gerador de Números Aleatórios</f:facet>
 		
 			Quantidade de números:
+			<!-- seleciona a qtt de numeros que vão aparecer na tela -->
 			<h:selectOneMenu value="#{genBean.qtde}">
 				<f:selectItem itemValue="1" itemLabel="1" />
 				<f:selectItem itemValue="2" itemLabel="2" />
@@ -24,6 +25,7 @@
 				<f:selectItem itemValue="5" itemLabel="5" />
 			</h:selectOneMenu>
 		
+		<!-- escolhe valor mínimo e máximo -->
 			Valor mínimo:
 			<h:inputText value="#{genBean.min}" size="4" />
 			
@@ -31,6 +33,7 @@
 			<h:inputText value="#{genBean.max}" size="4" />
 		</h:panelGrid>
 
+<!-- botão para executar a operação -->
 		<h:commandButton value="Gerar" action="#{genBean.gerar}" />
 		<hr />
 

@@ -14,9 +14,18 @@
 <h:body>
 	<h2>Inversão de Texto</h2>
 	<h:form id="form">
-		Texto:<br /><h:inputText value="#{formBean.texto}" /><br /><br />
-		Texto Invertido:<br /><b>==> <h:outputText value="#{formBean.textoInvertido}" /></b><br /><br />
-		
+		<!-- Recebe o texto do usuário -->
+		Texto:<br />
+		<h:inputText value="#{formBean.texto}" />
+		<br />
+		<br />
+
+		<!-- Mostra o texto invertido -->
+		Texto Invertido:<br />
+		<b>==> <h:outputText value="#{formBean.textoInvertido}" /></b>
+		<br />
+		<br />
+
 		<h:commandButton value="Inverter" action="#{formBean.inverter}" />
 	</h:form>
 </h:body>

@@ -2,6 +2,7 @@ public class Interesse {
 
 	private static Interesse interesse = new Interesse();
 	
+	//declaração de variavel
 	private Integer id;
 	private String area;
 	
@@ -9,10 +10,12 @@ public class Interesse {
 		
 	}
 	
+	//construtor
 	public Interesse(Integer id, String area) {
 		this.id = id;
 		this.area = area;
 	}
+	
 	
 	public static Interesse getInteresse() {
 		return interesse;
@@ -20,6 +23,7 @@ public class Interesse {
 	public static void setInteresse(Interesse interesse) {
 		Interesse.interesse = interesse;
 	}
+	//getter e setter
 	public Integer getId() {
 		return id;
 	}

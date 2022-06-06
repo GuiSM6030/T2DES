@@ -11,22 +11,23 @@ import javax.inject.Named;
 @RequestScoped
 public class PageBean implements Serializable{
 
+	//declara variavel
 	private int num1;
 	private int num2;
 	private int num3;
 	private int res;
-	
-	@Inject
+
+	@Inject //injeta o flash no java
 	private Flash flash;
-	
+
 	public String somar() {
-		
-		
+		//operação da soma
 		flash.put("result", (num1 + num2 + num3));
-		
+		//resultado
 		return "result";
 	}
-	
+
+	//getter e setter
 	public int getNum1() {
 		return num1;
 	}
@@ -47,5 +48,5 @@ public class PageBean implements Serializable{
 	}
 
 
-	
+
 }

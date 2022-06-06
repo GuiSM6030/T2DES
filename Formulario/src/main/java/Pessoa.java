@@ -4,8 +4,10 @@ import java.util.Date;
 
 public class Pessoa {
 
+	
 	private static Pessoa pessoa = new Pessoa();
 
+	//declaração de variavel
 	private String nome;
 	private String email;
 	private Date dtNasc;
@@ -20,7 +22,7 @@ public class Pessoa {
 	private Integer[] interesses;
 	
 	
-	
+	//getter e setter
 	public static Pessoa getPessoa() {
 		return pessoa;
 	}

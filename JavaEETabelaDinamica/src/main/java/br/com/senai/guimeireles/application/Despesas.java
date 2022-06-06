@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class Despesas {
 
+	//declaração de variavel
 	private String data;
 	private String desc;
 	private double valor;
 	private boolean edit;
-	
-	
+
+
+	//getter e setter
 	public String getData() {
 		return data;
 	}
@@ -34,6 +36,6 @@ public class Despesas {
 	public void setEdit(boolean edit) {
 		this.edit = edit;
 	}
-	
-	
+
+
 }

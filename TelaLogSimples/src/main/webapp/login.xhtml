@@ -4,27 +4,28 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"
-	lang="pt-br">
-	
+	xmlns:jsf="http://xmlns.jcp.org/jsf" lang="pt-br">
+
 <h:head>
-	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
+	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1" />
 	<title>Login</title>
 </h:head>
 <body>
-	
+
 	<h:form>
 		<h:panelGrid columns="2">
+			<!-- recebe os dados do user -->
 		Nome:
-		<h:inputText value="#{logBean.nome}"/>
+		<h:inputText value="#{logBean.nome}" />
 		
 		Senha:
-		<h:inputSecret value="#{logBean.senha}"/>
-		
+		<h:inputSecret value="#{logBean.senha}" />
+
 		</h:panelGrid>
-		
+
+		<!-- realiza loguin validando os dados acima -->
 		<h:commandButton id="login" value="Login" action="#{logBean.doLogin}"></h:commandButton>
 	</h:form>
-	
+
 </body>
 </html>

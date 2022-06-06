@@ -11,6 +11,7 @@ public class FormBean implements Serializable {
 
 	private Pessoa pessoa;
 	
+	//Atribui os dados colocados no form
 	public Pessoa getPessoa() {
 		if (pessoa == null) {
 			pessoa = new Pessoa();

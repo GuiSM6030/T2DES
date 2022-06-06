@@ -10,20 +10,24 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class LogBean implements Serializable {
-	
+
+	//declaração de variavel
 	private String nome;
 	private String senha;
-	
+
+	//da um aviso no console o bean vai ser construido
 	@PostConstruct
 	public void onCreate() {
 		System.out.println("Bean Criado");
 	}
-	
+
+	//da um aviso no console o bean vai ser destruido
 	@PreDestroy
 	public void onDestroy() {
 		System.out.println("Bean será destruído");
 	}
 
+	//getter e setter
 	public String getNome() {
 		return nome;
 	}

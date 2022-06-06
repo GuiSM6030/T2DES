@@ -13,11 +13,12 @@ public class FormBean implements Serializable {
 	private String textoInvertido;
 	
 	public String inverter() {
-		// Inverte o texto e direciona o ususário pra própria tela onde ele estava
+		// Inverte o texto e direciona o ususï¿½rio pra prï¿½pria tela onde ele estava
 		textoInvertido = new StringBuilder(texto).reverse().toString();
 		return null;
 	}
 
+	//getter e setter
 	public String getTexto() {
 		return texto;
 	}

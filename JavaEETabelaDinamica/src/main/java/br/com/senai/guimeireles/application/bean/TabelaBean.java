@@ -11,13 +11,17 @@ import javax.inject.Named;
 import br.com.senai.guimeireles.application.Despesas;
 
 @SuppressWarnings("serial")
+
+//apelido do bean
 @Named("tabela")
 @SessionScoped
 public class TabelaBean implements Serializable {
 	
+	//lista onde vai ser guardado as informações
 	private List<Despesas> despesasList = new ArrayList<>();
 	private ListDataModel<Despesas> despesas = new ListDataModel<>(despesasList);
 	
+	//método de inserir cadastros
 	public String inserir() {
 		
 		Despesas d = new Despesas();
@@ -25,7 +29,7 @@ public class TabelaBean implements Serializable {
 		
 		return null;
 	}
-
+	//método de deletar cadastros
 	public String delete(Despesas despesa) {
 		
 		despesasList.remove(despesa);
@@ -49,6 +53,7 @@ public class TabelaBean implements Serializable {
 	}
 	//Altera a tabela e salva na tela ↑
 
+	//lista que trabalha com JSF
 	public ListDataModel<Despesas> getDespesas(){
 		
 		return despesas;

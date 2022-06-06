@@ -14,7 +14,8 @@
 	<h:form>
 		<h:panelGrid columns="2">
 			<f:facet name="header">Dados Comerciais</f:facet>
-			
+
+			<!-- Pega os dados da empresa -->
 			Nome da Empresa:
 			<h:inputText value="#{formBean.pessoa.nomeEmp}" />
 			
@@ -47,17 +48,21 @@
 			Estado:
 			<h:selectOneMenu value="#{formBean.pessoa.endCom.estado.sigla}">
 				<f:selectItem itemValue="Selecione" noSelectionOption="true" />
-				<f:selectItems value="#{formBean.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
+				<f:selectItems value="#{formBean.estados}" var="e"
+					itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
 			</h:selectOneMenu>
+			
 			
 			Telefone comercial:
 			<h:panelGroup>
-				<h:inputText value="#{formBean.pessoa.telCom.ddd}" size="2" maxlength="2" />
+				<h:inputText value="#{formBean.pessoa.telCom.ddd}" size="2"
+					maxlength="2" />
 				<h:inputText value="#{formBean.pessoa.telCom.numero}" />
 			</h:panelGroup>
-			
+
 		</h:panelGrid>
 
+		<!-- botão de ir para próxima ou voltar -->
 		<h:commandButton value="Anterior" action="form1" />
 		<h:commandButton value="Próximo" action="form3" />
 	</h:form>

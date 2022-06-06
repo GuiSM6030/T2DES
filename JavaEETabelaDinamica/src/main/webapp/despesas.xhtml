@@ -12,11 +12,15 @@
 
 <body>
 
-<h:outputStylesheet library="css" name="styles.css"/>
+	<!-- chama o estilo CSS -->
+	<h:outputStylesheet library="css" name="styles.css" />
 
 	<h:form>
 
-		<h:dataTable value="#{tabela.despesas}" var="d" styleClass="tabela" headerClass="cabecalho" columnClasses="colNumero, colData, colDesc, colValor, colOp" rendered="#{tabela.despesas.rowCount > 0}">
+		<h:dataTable value="#{tabela.despesas}" var="d" styleClass="tabela"
+			headerClass="cabecalho"
+			columnClasses="colNumero, colData, colDesc, colValor, colOp"
+			rendered="#{tabela.despesas.rowCount > 0}">
 
 			<f:facet name="header">Lista de Despesas</f:facet>
 
@@ -27,7 +31,7 @@
 				
 			</h:column>
 
-
+			<!-- ID gerado automaticamente -->
 			<h:column>
 				<f:facet name="header">Data </f:facet>
 				<h:outputText value="#{d.data}" rendered="#{!d.edit}">
@@ -36,9 +40,10 @@
 				<h:inputText value="#{d.data}" rendered="#{d.edit}" />
 			</h:column>
 
-
+			<!-- Recebe os dados, e dependendo pode alterar ou excluir os dados -->
 			<h:column>
 				<f:facet name="header">Descrição</f:facet>
+				<!-- rendered faz a função de condicional -->
 				<h:outputText value="#{d.desc}" rendered="#{!d.edit}" />
 				<h:inputText value="#{d.desc}" rendered="#{d.edit}" />
 			</h:column>
@@ -55,19 +60,22 @@
 
 
 			<h:column>
+				<!-- Botão onde o usuário decide se quer salvar, deletar ou alterar -->
 				<f:facet name="header">Opeações</f:facet>
 				<h:panelGroup rendered="#{!d.edit}">
 					<h:commandLink value="Alterar" action="#{tabela.edit(d)}" />
 					<h:commandLink value="Excluir" action="#{tabela.delete(d)}" />
 				</h:panelGroup>
-				<h:commandLink value="Gravar" action="#{tabela.gravar(d)}" rendered="#{d.edit}"></h:commandLink>
+				<h:commandLink value="Gravar" action="#{tabela.gravar(d)}"
+					rendered="#{d.edit}"></h:commandLink>
 			</h:column>
 
-			<br/>
-			
+			<br />
+
 		</h:dataTable>
 
-			<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton>
+		<!-- cria a tabela -->
+		<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton>
 
 	</h:form>
 
