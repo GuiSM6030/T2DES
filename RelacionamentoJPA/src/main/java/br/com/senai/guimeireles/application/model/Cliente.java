@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
+@SuppressWarnings("serial")
 @Entity
 public class Cliente implements Serializable {
 	
