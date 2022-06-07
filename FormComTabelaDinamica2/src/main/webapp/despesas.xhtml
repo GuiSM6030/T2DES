@@ -12,7 +12,7 @@
 
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1" />
-	<title>.: CASINO :.</title>
+	<title>.: CASSINO :.</title>
 </h:head>
 <script>
 	//validação dos campos
@@ -47,7 +47,7 @@
 
 	<!-- cabeçalho puxando do template -->
 	<ui:composition template="/template.xhtml">
-		<ui:param name="titulo" value="..:: CASINO ::..">
+		<ui:param name="titulo" value="..:: CASSINO ::..">
 		</ui:param>
 
 
@@ -94,7 +94,7 @@
 						<table>
 
 							<tr>
-								<th class="cabecalho" colspan="5">Histórco de Apostas</th>
+								<th class="cabecalho" colspan="6">Histórco de Apostas</th>
 							</tr>
 
 
@@ -123,12 +123,14 @@
 											rendered="#{!d.edit}" /> <h:inputText value="#{d.descricao}"
 											rendered="#{d.edit}" /></td>
 
-									<td class="colValor"><h:outputText value="#{d.valor}"
-											rendered="#{!d.edit}">
+									<td class="colValor"><h:outputText value="#{d.valor}">
 											<f:convertNumber type="currency" locale="pt_BR">
 											</f:convertNumber>
-										</h:outputText> <h:inputText value="#{d.valor}" rendered="#{d.edit}" /></td>
-									<td class="colOp"><h:panelGroup rendered="#{!d.edit}">
+										</h:outputText> 
+										</td>
+										
+										<td class="colOp"> </td>
+									<td class="colValor"><h:panelGroup rendered="#{!d.edit}">
 											<h:commandLink value="Alterar" action="#{tabela.editar(d)}"></h:commandLink>
 											<h:commandLink value="Excluir" action="#{tabela.excluir(d)}"></h:commandLink>
 										</h:panelGroup> <h:commandLink value="Gravar" action="#{tabela.gravar(d)}"
