@@ -10,16 +10,57 @@
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1" />
 
 	<title>Login</title>
+
+	<style>
+body {
+	background-color: lightgrey;
+}
+
+.fundo {
+	background-color: white;
+	width: 500px;
+	border-radius: 20px;
+	margin: 20px;
+	padding: 20px;
+}
+</style>
+
 </h:head>
+
 <h:body>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 	<h:form>
-		<h:panelGrid columns="2">
+		<center>
+			<div class="fundo">
+
+				<h1>Login</h1>
+				<h:panelGrid columns="2">
 			Nome:
-			<h:inputText value="#{tabela.user}"/>
+			<h:inputText value="#{tabela.user}" />
+			
 			Senha:
-			<h:inputSecret value="#{tabela.senha}"/>
-		</h:panelGrid>
-		<h:commandButton id="login" value="login" action="#{tabela.doLogin}"/>
+			<br />
+					<h:inputSecret value="#{tabela.senha}" />
+				</h:panelGrid>
+				<br /> <br />
+				<h:commandButton id="login" value="ENTRAR"
+					action="#{tabela.doLogin}" />
+
+				<br /> <br /> <br /> <br />
+				<h:graphicImage library="img" name="casino.gif" width="400px" />
+
+			</div>
+		</center>
 	</h:form>
 
 </h:body>

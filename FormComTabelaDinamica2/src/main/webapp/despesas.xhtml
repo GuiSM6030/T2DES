@@ -14,6 +14,7 @@
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1" />
 	<title>.: CASSINO :.</title>
 </h:head>
+
 <script>
 	//validação dos campos
 	function verificarCampos() {
@@ -44,7 +45,6 @@
 	}
 </script>
 <body>
-
 	<!-- cabeçalho puxando do template -->
 	<ui:composition template="/template.xhtml">
 		<ui:param name="titulo" value="..:: CASSINO ::..">
@@ -52,11 +52,12 @@
 
 
 
-		<!-- form que o usuário põe os dados -->
-		<!-- dados vão ser puxados do banco e apareceram na tabela -->
 		<ui:define name="conteudo">
 
 			<h:outputStylesheet library="css" name="styles.css" />
+			
+			<!-- form que o usuário põe os dados -->
+		<!-- dados vão ser puxados do banco e apareceram na tabela -->
 			<h:form id="f">
 				<center>
 					<h:panelGroup value="">
@@ -83,8 +84,10 @@
 							<h:commandButton value="Inserir"
 								action="#{tabela.inserir(tabela.data1,tabela.desc1,tabela.valor1)}"
 								onclick="return verificarCampos()"></h:commandButton>
+								
 						</h:panelGrid>
 					</h:panelGroup>
+				
 
 
 					<!-- tabela com os cadastros -->

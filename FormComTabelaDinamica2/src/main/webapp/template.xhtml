@@ -12,19 +12,25 @@
 	<title>Template</title>
 </h:head>
 <h:body>
+
 <!-- Tabela com o template -->
-	<table width="100%" border="1">
+<center>
+	<table width="1000px" border="10">
+	<br/>
 		<tr>
 		<!-- Cabeçalho com imagem -->
 			<td align="center">
+			<h3>#{titulo}</h3>
 			<h:graphicImage library="img" name="casinos.jpg" width="500px"/>
-				<h3>#{titulo}</h3>
+				
 				
 			</td>
 		</tr>
 	</table>
+	
 	<br />
-	<table width="100%" border="1">
+	<table width="800px" border="1">
+	<br/><br/><br/><br/>
 		<tr>
 			<td><ui:insert name= "conteudo"/></td>
 		</tr>
@@ -32,11 +38,13 @@
 
 	<br />
 
-	<table width="100%" border="1">
+	<table width="1000px"  border="1">
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 		<tr>
 		<!-- rodapé -->
 			<td align="center">Todos os Direitos Reservados</td>
 		</tr>
 	</table>
+	</center>
 </h:body>
 </html>
