@@ -4,20 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Entity //cria tabela
 public class Despesas {
-//atributos primitivos n�o podem ser nulos, por isso usamos os wrappers
+//atributos primitivos nao podem ser nulos
 private String data;
 private String descricao;
 private Double valor;
 private Boolean edit;
 
-
+//gerar id automaticamente
 @Id
 @GeneratedValue
 private Integer id;
-
-
 
 
 public Despesas(String data, String descricao, Double valor) {
@@ -29,11 +27,10 @@ public Despesas(String data, String descricao, Double valor) {
 }
 
 public Despesas() {
-	
-	
 }
 
 
+//getter e setter
 public Integer getId() {
 	return id;
 }

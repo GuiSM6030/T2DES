@@ -15,17 +15,16 @@ import br.com.guimeireles.jpa.ejbbean.ComandosBean;
 import br.com.senai.guimeireles.application.model.Despesas;
 
 
-
-@Named("form")
-@RequestScoped
+@Named("form")//nome dado no binding do xhtml
+@RequestScoped  //Funciona enquanto o navegador estiver aberto
 public class FormBean implements Serializable {
 	
-	@EJB
+	@EJB //relaciona com o banco de dados
 	private ComandosBean comandosBean;
 
-	//FacesCotext é usado para gravar todos os eventos que acontece na tela. Ex: Cliques, Mensagens e etc.
-	@Inject
-	private FacesContext context;
+	
+	@Inject //injeta código
+	private FacesContext context; //grava as açoes que acontecem na tela
 	
 	private UIComponent searchInputText;
 	
@@ -33,6 +32,7 @@ public class FormBean implements Serializable {
 	
 	private Despesas despesa1;
 	
+	//mainpula os dados
 	public void gravarr(AjaxBehaviorEvent event) {
 		if(despesa1.getId()==null) {
 			comandosBean.inserir(despesa1);
@@ -53,6 +53,9 @@ public class FormBean implements Serializable {
 		comandosBean.excluir(despesa1);
 		despesa1 = null;
 	}
+	
+	
+	
 	public Despesas getDespesas() {
 		if(despesa1==null) {
 			despesa1 = new Despesas();

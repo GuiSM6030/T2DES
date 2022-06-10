@@ -16,8 +16,9 @@
 </h:head>
 
 <script>
-	//validação dos campos
+	//valida os campos
 	function verificarCampos() {
+		
 		//recebe valor das variáveis da classe Despesas
 		var data = document.getElementById("f:data").value;
 		var descricao = document.getElementById("f:descricao").value;
@@ -55,9 +56,9 @@
 		<ui:define name="conteudo">
 
 			<h:outputStylesheet library="css" name="styles.css" />
-			
+
 			<!-- form que o usuário põe os dados -->
-		<!-- dados vão ser puxados do banco e apareceram na tabela -->
+			<!-- dados vão ser mandados pro banco e apareceram na tabela -->
 			<h:form id="f">
 				<center>
 					<h:panelGroup value="">
@@ -80,19 +81,19 @@
 								<br />
 								<h:inputText value="#{tabela.valor1}" id="valor"></h:inputText>
 							</h:column>
-							<!-- insere os dados puxados do form na tabela -->
+
+							<!-- botão que insere os dados puxados do form na tabela -->
 							<h:commandButton value="Inserir"
 								action="#{tabela.inserir(tabela.data1,tabela.desc1,tabela.valor1)}"
 								onclick="return verificarCampos()"></h:commandButton>
-								
+
 						</h:panelGrid>
 					</h:panelGroup>
-				
+
 
 
 					<!-- tabela com os cadastros -->
-					
-					
+
 					<h:panelGroup rendered="#{tabela.a == true }">
 						<table>
 
@@ -129,10 +130,9 @@
 									<td class="colValor"><h:outputText value="#{d.valor}">
 											<f:convertNumber type="currency" locale="pt_BR">
 											</f:convertNumber>
-										</h:outputText> 
-										</td>
-										
-										<td class="colOp"> </td>
+										</h:outputText></td>
+
+									<td class="colOp"></td>
 									<td class="colValor"><h:panelGroup rendered="#{!d.edit}">
 											<h:commandLink value="Alterar" action="#{tabela.editar(d)}"></h:commandLink>
 											<h:commandLink value="Excluir" action="#{tabela.excluir(d)}"></h:commandLink>
@@ -148,7 +148,7 @@
 					</h:panelGroup>
 					<br />
 
-					<!-- Valida se a tabela tem ou não coisas dentro -->
+					<!-- Valida se a tabela tem ou não coisas dentro e mostra na tela quando está vazia -->
 					<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
 						<h:outputText value="Não cadastrado" styleClass="message"></h:outputText>
 					</h:panelGroup>

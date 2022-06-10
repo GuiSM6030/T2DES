@@ -11,6 +11,7 @@
 
 	<title>Login</title>
 
+<!-- estilo CSS -->
 	<style>
 body {
 	background-color: lightgrey;
@@ -39,24 +40,27 @@ body {
 	<br />
 	<br />
 	<br />
+	<!-- formulário de loguin -->
 	<h:form>
 		<center>
 			<div class="fundo">
 
 				<h1>Login</h1>
+				<!-- user insere seus dados -->
 				<h:panelGrid columns="2">
-			Nome:
-			<h:inputText value="#{tabela.user}" />
+			Nome:               <!-- binding com o Java -->
+			<h:inputText value="#{login.user}" />
 			
 			Senha:
 			<br />
-					<h:inputSecret value="#{tabela.senha}" />
+					<h:inputSecret value="#{login.senha}" />
 				</h:panelGrid>
 				<br /> <br />
-				<h:commandButton id="login" value="ENTRAR"
-					action="#{tabela.doLogin}" />
+				<!-- valida o login e redireciona pra pagina principal -->
+				<h:commandButton id="login" value="ENTRAR" action="#{login.doLogin}" />
 
 				<br /> <br /> <br /> <br />
+				<!-- imagem  -->
 				<h:graphicImage library="img" name="casino.gif" width="400px" />
 
 			</div>

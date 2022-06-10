@@ -3,15 +3,18 @@ package br.com.senai.guimeireles.application.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//Método que irá fazer a junção com a tabela Despesas
+//cria tabela
 @Entity
 public class Produtos {
 	
+	//cria id automaticamente
 	@Id
 	@GeneratedValue
 	private Integer id;
 	private String nome;
 	private Double valor;
+	
+	//getter e setter
 	public Integer getId() {
 		return id;
 	}

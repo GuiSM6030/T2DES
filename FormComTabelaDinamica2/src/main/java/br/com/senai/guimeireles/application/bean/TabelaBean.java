@@ -14,17 +14,15 @@ import br.com.guimeireles.jpa.ejbbean.ComandosBean;
 import br.com.senai.guimeireles.application.model.Despesas;
 
 
-@SuppressWarnings("serial") 
-@Named("tabela")
-@SessionScoped 
+@SuppressWarnings("serial") //tira o erro da public class
+@Named("tabela") //nome dado no binding do xhtml
+@SessionScoped //Funciona enquanto o navegador estiver aberto
 public class TabelaBean implements Serializable{
 	
+	//lista dos objetos da despesa
 	private List<Despesas> despesas = new ArrayList<>();
-	
-	
-	private String user;
-	private String senha;
-	
+
+	//delcaraçao de variavel
 	String data1;
 	String desc1;
 	Double Valor1;
@@ -33,26 +31,12 @@ public class TabelaBean implements Serializable{
 
 	private Despesas despesas1;
 	
-	@EJB
+	@EJB //relaciona com o banco de dados
 	private ComandosBean comandosBean;
 	
 	
-	public String getUser() {
-		return user;
-	}
 
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
+	//getter e setter
 	public String getData1() {
 		return data1;
 	}
@@ -102,18 +86,15 @@ public class TabelaBean implements Serializable{
 		
 	}
 	
-	
-
-	
-	
-	
+	//inseres as informações nas variavels
 	public String inserir(String data,String desc,Double Valor) {
 		
+		//coloca as variaveis no objeto 
 		Despesas d = new Despesas(data,desc,Valor);
 		d.setEdit(true);
 		
+		//e insere na lista
 		a =true;
-		
 		despesas.add(d);
 		data1 = null;
 		desc1 = null;
@@ -126,7 +107,7 @@ public class TabelaBean implements Serializable{
 	}
 	
 	public String excluir(Despesas despesa) {
-		//remove da lista e do banco de dados
+		//remove os itens
 		despesas.remove(despesa);
 		ExcluirBanco(despesa);
 		return null;
@@ -150,6 +131,7 @@ public class TabelaBean implements Serializable{
 		return null;
 	}
 	
+	//retorna na tabela com as despesas inseridas
 	public List<Despesas> getDespesas() {
 		
 		return despesas;
@@ -170,12 +152,6 @@ public class TabelaBean implements Serializable{
 		this.a = a;
 	}
 
-	public String doLogin() {
-		//validação login e senha
-		if("abc".equals(user) && "123".equals(senha)) {
-			return "despesas";	
-		}
-		return null;
-	}
+
 	
 }
