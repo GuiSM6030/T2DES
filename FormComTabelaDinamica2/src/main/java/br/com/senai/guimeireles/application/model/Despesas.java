@@ -64,9 +64,4 @@ public Boolean getEdit() {
 public void setEdit(Boolean edit) {
 	this.edit = edit;
 }
-
-
-
-
-	
 }

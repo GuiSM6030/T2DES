@@ -3,6 +3,8 @@
 	<persistence-unit name="FormComTabelaDinamica">
 		<jta-data-source>jdbc/MySqlDS</jta-data-source>
 		<class>br.com.senai.guimeireles.application.model.Despesas</class>
+		<class>br.com.senai.guimeireles.application.model.Pagar</class>
 		<class>br.com.senai.guimeireles.application.model.Produtos</class>
+		<class>br.com.senai.guimeireles.application.model.Valor</class>
 	</persistence-unit>
 </persistence>
