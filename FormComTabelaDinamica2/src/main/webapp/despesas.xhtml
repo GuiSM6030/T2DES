@@ -9,7 +9,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous" />
-
+<!-- Aviso: Alterei o modelo com estilo "compras" para um modelo de "apostas", onde a descriÃ§Ã£o equivale ao jogo, o valor equivale Ã  aposta feita e a despesa equivale ao ato de apostar em si -->
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1" />
 	<title>.: CASSINO :.</title>
@@ -19,23 +19,23 @@
 	//valida os campos
 	function verificarCampos() {
 		
-		//recebe valor das variáveis da classe Despesas
+		//recebe valor das variÃ¡veis da classe Despesas
 		var data = document.getElementById("f:data").value;
 		var descricao = document.getElementById("f:descricao").value;
 		var valor = document.getElementById("f:valor").value;
-		//valida se o campo está vazio e avisa na tela
+		//valida se o campo estÃ¡ vazio e avisa na tela
 		if (data == "") {
-			alert("Data não Preenchida");
+			alert("Data nÃ£o Preenchida");
 			return false;
 
 		} else {
 			if (descricao == "") {
-				alert("Descrição não Preenchido");
+				alert("DescriÃ§Ã£o nÃ£o Preenchido");
 				return false;
 			} else {
 
 				if (valor == "") {
-					alert("Valor não Preenchido");
+					alert("Valor nÃ£o Preenchido");
 					return false;
 				}
 
@@ -46,7 +46,7 @@
 	}
 </script>
 <body>
-	<!-- cabeçalho puxando do template -->
+	<!-- cabeÃ§alho puxando do template -->
 	<ui:composition template="/template.xhtml">
 		<ui:param name="titulo" value="..:: CASSINO ::..">
 		</ui:param>
@@ -57,8 +57,8 @@
 
 			<h:outputStylesheet library="css" name="styles.css" />
 
-			<!-- form que o usuário põe os dados -->
-			<!-- dados vão ser mandados pro banco e apareceram na tabela -->
+			<!-- form que o usuÃ¡rio pÃµe os dados -->
+			<!-- dados vÃ£o ser mandados pro banco e apareceram na tabela -->
 			<h:form id="f">
 				<center>
 					<h:panelGroup value="">
@@ -82,7 +82,7 @@
 								<h:inputText value="#{tabela.valor1}" id="valor"></h:inputText>
 							</h:column>
 
-							<!-- botão que insere os dados puxados do form na tabela -->
+							<!-- botÃ£o que insere os dados puxados do form na tabela -->
 							<h:commandButton value="Inserir"
 								action="#{tabela.inserir(tabela.data1,tabela.desc1,tabela.valor1)}"
 								onclick="return verificarCampos()"></h:commandButton>
@@ -98,26 +98,26 @@
 						<table>
 
 							<tr>
-								<th class="cabecalho" colspan="6">Histórco de Apostas</th>
+								<th class="cabecalho" colspan="6">HistÃ³rco de Apostas</th>
 							</tr>
 
 
 							<tr>
 
-								<!-- títulos da tabela -->
+								<!-- tÃ­tulos da tabela -->
 								<th class="cabecalho">ID</th>
 								<th class="cabecalho">Data do Jogo</th>
 								<th class="cabecalho">Jogo apostado</th>
 								<th class="cabecalho">Valor da(s) aposta(s)</th>
 								<th class="cabecalho">Valor total</th>
-								<th class="cabecalho">Operação</th>
+								<th class="cabecalho">OperaÃ§Ã£o</th>
 
 							</tr>
-							<!-- operação que faz os dados aparecerem sem substituir -->
+							<!-- operaÃ§Ã£o que faz os dados aparecerem sem substituir -->
 							<ui:repeat value="#{tabela.despesas}" var="d" varStatus="st">
 
 								<tr>
-									<!-- rendered valida quando uma informação será somente apresentada, editada, salva ou excluida-->
+									<!-- rendered valida quando uma informaÃ§Ã£o serÃ¡ somente apresentada, editada, salva ou excluida-->
 									<td class="colNumero" colspan="1">#{st.index +1}</td>
 									<td class="colData" colspan="1"><h:outputText
 											value="#{d.data}" rendered="#{!d.edit}" /> <h:inputText
@@ -148,9 +148,9 @@
 					</h:panelGroup>
 					<br />
 
-					<!-- Valida se a tabela tem ou não coisas dentro e mostra na tela quando está vazia -->
+					<!-- Valida se a tabela tem ou nÃ£o coisas dentro e mostra na tela quando estÃ¡ vazia -->
 					<h:panelGroup rendered="#{tabela.despesas.size() == 0}">
-						<h:outputText value="Não cadastrado" styleClass="message"></h:outputText>
+						<h:outputText value="NÃ£o cadastrado" styleClass="message"></h:outputText>
 					</h:panelGroup>
 				</center>
 			</h:form>
